@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test carrousel 2</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="slideshow">
+    <ul>
+    <li><img src="image/Bainsite.jpg"/></li>
+    <li><img src="image/parf1site.jpg"/></li>
+    <li><img src="image/parf3.jpg"/></li>
+    <li><img src="image/parf2site.jpg"/></li>
+    <li><img src="image/Bainsite.jpg"/></li>
+    </ul>
+</div>
+<div id="galerie">
+    <!-- Boutons de naviagation -->
+    <div id="btnNavigation">
+        <button id="prec">Précédent</button>
+        <button id="lect">Lecture</button>
+        <button id="suiv">Suivant</button>
+    </div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        setInterval(function(){
+            $(".slideshow ul").animate({marginLeft:-350},800,function(){
+                $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+            })
+        }, 4000);
+    });
+
+    // Pour les boutons
+    document.getElementById("prec").addEventListener("click",reculer,false);
+    document.getElementById("suiv").addEventListener("click",avancer,false);
+    document.getElementById("lect").addEventListener("click",lecture,false);
+
+
+
+</script>
+</div>
+</body>
+</html>
+
+
